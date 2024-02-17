@@ -1,0 +1,28 @@
+{
+    "id": "2A42FA01",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1708171320490.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "id": "40eed02f218b43e5b20a2412e2411898",
+        "name": "imputed_data",
+        "title": "imputed_data",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3011710386776,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1708171320490,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,72 @@
+#~~~~~~~~~~~~~~~~~~Task A~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+player <- read.csv("CompleteDataset(1).csv")
+# Dimensions of the dataset
+dim(player)
+# Displaying Column names
+names(player)
+# Convert Overall column to numeric
+player$Overall <- as.numeric(player$Overall)
+
+# Check for missing values in Overall column
+missing_values <- sum(is.na(player$Overall))
+if(missing_values > 0) {
+  print(paste("Warning: There are", missing_values, "missing values in Overall column."))
+}
+
+# Create a histogram of Player Overall Rating
+hist(player$Overall, main = "Player Overall Rating Histogram", xlab = "Overall Rating", ylab = "Frequency")
+
+# Get the top ten best players
+top_ten_players <- player[order(player$Overall, decreasing = TRUE), c("Name", "Club", "Nationality", "Age", "Overall")][1:10,]
+
+# Print the information about the top ten best players
+print("Top Ten Best Players:")
+print(top_ten_players)
+
+#~~~~~~~~~~~~~~~~~~~~~~~Task B~~~~~~~~~~~~~~~~~~~~~~~~~
+# Calculate the median of the Age column
+age_median <- median(player$Age, na.rm = TRUE)
+
+
+# Calculate the quartiles
+Q1 <- quantile(player$Age, 0.25, na.rm = TRUE)
+Q3 <- quantile(player$Age, 0.75, na.rm = TRUE)
+
+# Calculate the interquartile range (IQR)
+IQR <- Q3 - Q1
+
+# Define the lower and upper bounds for outliers
+lower_bound <- Q1 - 1.5 * IQR
+upper_bound <- Q3 + 1.5 * IQR
+
+# Identify outliers
+outliers <- player[player$Age < lower_bound | player$Age > upper_bound, c("Name", "Age")]
+
+#output all the data
+print(paste("Median Age:", age_median))
+print("Outliers:")
+print(outliers)
+
+#~~~~~~~~~~~~~~~~~~~~Task C~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Identify numeric columns
+numeric_columns <- sapply(player, is.numeric)
+
+# Calculate the correlation matrix
+correlation_matrix <- cor(player[, numeric_columns], use = "complete.obs")
+
+# Print the correlation matrix
+print(correlation_matrix)
+#~~~~~~~~~~~~~~~~~~~Task D.1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Create a scatter plot of Age vs. Overall Rating
+plot(player$Age, player$Overall, 
+     xlab = "Age", ylab = "Overall Rating", 
+     main = "Age vs. Overall Rating Scatter Plot",
+     col = "blue", pch = 16)
+#~~~~~~~~~~~~~~~~~~~Task D.2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Create a scatter plot of Overall Rating vs. Market Value
+plot(player$Overall, player$Wage.in.K., 
+     xlab = "Overall Rating", ylab = "Wage (in thousands)", 
+     main = "Overall Rating vs. Wage Scatter Plot",
+     col = "orange", pch = 16)
+
+
