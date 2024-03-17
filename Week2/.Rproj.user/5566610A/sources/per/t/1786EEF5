@@ -1,26 +1,26 @@
 {
-    "id": "C828F92F",
-    "path": "~/GitHub/Applied-ML/Week4/Week4 Self.R",
-    "project_path": "Week4 Self.R",
+    "id": "1786EEF5",
+    "path": "~/GitHub/Applied-ML/Week2/Week2Tasks.R",
+    "project_path": "Week2Tasks.R",
     "type": "r_source",
-    "hash": "362546728",
+    "hash": "1378391548",
     "contents": "",
     "dirty": false,
-    "created": 1708539487725.0,
+    "created": 1710706861127.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "17,79",
-        "scrollLine": "0"
+        "cursorPosition": "7,0",
+        "scrollLine": "4"
     },
     "folds": "",
-    "lastKnownWriteTime": 1708540403,
+    "lastKnownWriteTime": 1708106051,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1708540403501,
+    "last_content_update": 1708106051,
     "read_only": false,
     "read_only_alternatives": []
 }
