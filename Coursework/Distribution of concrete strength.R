@@ -202,7 +202,7 @@ combined_outliers <- Reduce("|", outliers_list)
 testData_clean <- testData[!combined_outliers, ]
 # Print the cleaned dataset
 print(testData_clean)
-#--------------------------------------------Correlation matrix-----------------
+#------------------------------Correlation matrix-------------------------------
 # Select only predictor variables (exclude the target variable)
 predictor_vars <- subset(trainData_clean, select = -c(Strength))
 
@@ -211,4 +211,15 @@ correlation_matrix <- cor(predictor_vars)
 
 # Print the correlation matrix
 print(correlation_matrix)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PART 2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#------------------------------Multi-Variable Linear Regression-----------------
+# Load data
+data <- read.csv("testData_clean")
+
+# Fit the model
+model <- lm(Strength ~ Cement + + Blast.Furnace.Slag + Fly.Ash + Water + Superplasticizer + Coarse.Aggregate + Fine.Aggregate + Age, data = testData_clean)
+
+# Summarize the model
+summary(model)
 
